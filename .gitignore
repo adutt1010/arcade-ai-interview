@@ -17,6 +17,8 @@ venv/
 
 # Cache files (for API responses)
 cache.json
+lol.txt
+
 
 # OS junk
 .DS_Store
