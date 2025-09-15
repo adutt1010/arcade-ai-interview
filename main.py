@@ -43,3 +43,6 @@ for step in data.get("steps",[]):
 print("\n Extracted Actions:")
 for i,action in enumerate(actions,1):
     print(f"{i}. {action}")
+
+
+# test to see if .env was not committed
