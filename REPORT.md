@@ -26,6 +26,6 @@ The user was attempting to add a Razor A5 Lux 2 Wheel Kick Scooter to their cart
 - Clicked on 1 (link)
 - Chapter: Thank you for your interest!
 
-## Social Image
+## Social Media Image
 
-![Flow Social Image](images/user_flow.png)
+![Flow Social Media Image](images/user_flow.png)
