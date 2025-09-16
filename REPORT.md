@@ -28,4 +28,4 @@ The user was attempting to add a Razor A5 Lux 2 Wheel Kick Scooter to their cart
 
 ## Social Image
 
-![Flow Social Image](images\user_flow.png)
+![Flow Social Image](images/user_flow.png)

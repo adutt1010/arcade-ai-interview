@@ -135,9 +135,10 @@ image_prompt = (
 # print("\nImage Prompt:\n",image_prompt)
 
 try:
-    output_path = Path("images/user_flow.png")
-    saved_path = generate_and_save_image(image_prompt, output_path)
-    print(f"Image saved to {saved_path.resolve()}")
+    # Use a constant output path and prefer POSIX style for stable Markdown links
+    OUTPUT_IMAGE = Path("images") / "user_flow.png"
+    saved_path = generate_and_save_image(image_prompt, OUTPUT_IMAGE)
+    print(f"Image saved to {saved_path.resolve().as_posix()}")
     try:
         if os.name == 'nt':  
             os.startfile(saved_path)
@@ -168,9 +169,9 @@ def build_markdown_report(flow_title: str, summary_text: str, actions_list: list
         lines.append("- (No actions extracted)")
     lines.append("")
     if image_rel_path:
-        lines.append("## Social Image")
+        lines.append("## Social Media Image")
         lines.append("")
-        lines.append(f"![Flow Social Image]({image_rel_path})")
+        lines.append(f"![Social Media Flow Image]({image_rel_path})")
         lines.append("")
     return "\n".join(lines)
 
@@ -189,7 +190,8 @@ report_md = build_markdown_report(
     flow_title=flow_title,
     summary_text=summary,
     actions_list=actions,
-    image_rel_path=(str(Path("images/user_flow.png")) if 'saved_path' in locals() and saved_path else None),
+    # Ensure forward slashes in Markdown regardless of OS
+    image_rel_path=((Path("images") / "user_flow.png").as_posix() if 'saved_path' in locals() and saved_path else None),
 )
 Path("REPORT.md").write_text(report_md, encoding="utf-8")
 # print("Wrote REPORT.md")
